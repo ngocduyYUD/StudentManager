@@ -43,7 +43,7 @@ public class DataAccess {
             FileWriter myWriter = new FileWriter("src/main/resources/data");
             for(Student student: students)
             {
-                myWriter.write(student.getId()+ "-" + student.getName() + "-" + student.getSex() + "-" + student.getAge() + "-" + student.getMathResult() + "-" + student.getPhysResult() + "-" + student.getChemistryResult() + "-" + student.getAverage());
+                myWriter.write(student.getId()+ "-" + student.getName() + "-" + student.getSex() + "-" + student.getAge() + "-" + student.getMathResult() + "-" + student.getPhysResult() + "-" + student.getChemistryResult() + "-" + student.getAverage()+"\n");
             }
             myWriter.close();
             System.out.println("Successfully wrote to the file.");

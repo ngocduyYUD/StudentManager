@@ -10,9 +10,9 @@ public class Service {
         Scanner scanner = new Scanner(System.in);
         boolean nullCheck = false;
         do {
-            String line = null;
+            String line = "";
             System.out.print("Name: ");
-            if(!(line = scanner.toString()).isEmpty())
+            if(!(line = scanner.nextLine()).isEmpty())
             {
                 student.setName(line);
                 System.out.println();
@@ -21,7 +21,7 @@ public class Service {
                 nullCheck = true;
             }
             System.out.print("Sex: ");
-            if(!(line = scanner.toString()).isEmpty())
+            if(!(line = scanner.nextLine()).isEmpty())
             {
                 student.setSex(line);
                 System.out.println();
@@ -29,7 +29,7 @@ public class Service {
                 nullCheck = true;
             }
             System.out.print("Age: ");
-            if(!(line = scanner.toString()).isEmpty())
+            if(!(line = scanner.nextLine()).isEmpty())
             {
                 student.setAge(Integer.parseInt(line));
                 System.out.println();
@@ -38,7 +38,7 @@ public class Service {
                 nullCheck = true;
             }
             System.out.print("Math: ");
-            if(!(line = scanner.toString()).isEmpty())
+            if(!(line = scanner.nextLine()).isEmpty())
             {
                 student.setMathResult(Float.parseFloat(line));
                 System.out.println();
@@ -47,7 +47,7 @@ public class Service {
                 nullCheck = true;
             }
             System.out.print("Physic: ");
-            if(!(line = scanner.toString()).isEmpty())
+            if(!(line = scanner.nextLine()).isEmpty())
             {
                 student.setPhysResult(Float.parseFloat(line));
                 System.out.println();
@@ -56,7 +56,7 @@ public class Service {
                 nullCheck = true;
             }
             System.out.print("Chemistry: ");
-            if(!(line = scanner.toString()).isEmpty())
+            if(!(line = scanner.nextLine()).isEmpty())
             {
                 student.setChemistryResult(Float.parseFloat(line));
                 System.out.println();
@@ -66,7 +66,7 @@ public class Service {
             }
             student.setAverage(avg(student.getMathResult(), student.getPhysResult(), student.getChemistryResult()));
         } while (nullCheck);
-        student.setId(students.size());
+        student.setId(students.size() + 1);
         students.add(student);
     }
     public void updateById(int id, List<Student> students)
@@ -78,36 +78,39 @@ public class Service {
                 Scanner scanner = new Scanner(System.in);
                 System.out.println(student.toString());
                 System.out.print("Name: ");
-                String line = scanner.toString();
-                student.setName(line);
-                System.out.println();
+                String line = "";
+                if(!(line = scanner.nextLine()).isEmpty())
+                {
+                    student.setName(line);
+                    System.out.println();
+                }
                 System.out.print("Sex: ");
-                if(!(line = scanner.toString()).isEmpty())
+                if(!(line = scanner.nextLine()).isEmpty())
                 {
                     student.setSex(line);
                     System.out.println();
                 }
                 System.out.print("Age: ");
-                if(!(line = scanner.toString()).isEmpty())
+                if(!(line = scanner.nextLine()).isEmpty())
                 {
                     int age = Integer.parseInt(line);
                     student.setAge(age);
                     System.out.println();
                 }
                 System.out.print("Math: ");
-                if(!(line = scanner.toString()).isEmpty())
+                if(!(line = scanner.nextLine()).isEmpty())
                 {
                     student.setMathResult(Float.parseFloat(line));
                     System.out.println();
                 }
                 System.out.print("Physic: ");
-                if(!(line = scanner.toString()).isEmpty())
+                if(!(line = scanner.nextLine()).isEmpty())
                 {
                     student.setPhysResult(Float.parseFloat(line));
                     System.out.println();
                 }
                 System.out.print("Chemistry: ");
-                if(!(line = scanner.toString()).isEmpty())
+                if(!(line = scanner.nextLine()).isEmpty())
                 {
                     student.setChemistryResult(Float.parseFloat(line));
                     System.out.println();
@@ -162,7 +165,10 @@ public class Service {
     }
     public void displayAllStudent(List<Student> students)
     {
-        System.out.println(Arrays.toString(students.toArray()));
+        for (Student student: students)
+        {
+            System.out.println(student + "Hoc Luc: " + hocLuc(student.getAverage()));
+        }
     }
     public void saveChange(List<Student> students)
     {
@@ -172,5 +178,24 @@ public class Service {
     {
         float sum = a + b+ c;
         return sum/3;
+    }
+    public String hocLuc(float avg)
+    {
+        if(avg>= 8 )
+        {
+            return "Gioi";
+        }
+        else if(avg >= 6.5)
+        {
+            return "Kha";
+        }
+        else if(avg >= 5)
+        {
+            return "Trung Binh";
+        }
+        else
+        {
+            return "Yeu";
+        }
     }
 }
