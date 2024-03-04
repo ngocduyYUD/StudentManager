@@ -33,7 +33,8 @@ public class Main {
                     break;
                 case 4:
                     System.out.print("search by name: ");
-                    String searchName = scanner.toString();
+                    scanner.nextLine();
+                    String searchName = scanner.nextLine();
                     List<Student> searchNameResult = service.searchByName(searchName, students);
                     System.out.println(Arrays.toString(searchNameResult.toArray()));
                     break;
