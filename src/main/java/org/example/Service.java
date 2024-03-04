@@ -20,7 +20,6 @@ public class Service {
             else{
                 nullCheck = true;
             }
-            scanner.nextLine();
             System.out.print("Sex: ");
             if(!(line = scanner.nextLine()).isEmpty())
             {
@@ -29,7 +28,6 @@ public class Service {
             }else{
                 nullCheck = true;
             }
-            scanner.nextLine();
             System.out.print("Age: ");
             if(!(line = scanner.nextLine()).isEmpty())
             {
@@ -39,7 +37,6 @@ public class Service {
             else{
                 nullCheck = true;
             }
-            scanner.nextLine();
             System.out.print("Math: ");
             if(!(line = scanner.nextLine()).isEmpty())
             {
@@ -49,7 +46,6 @@ public class Service {
             else{
                 nullCheck = true;
             }
-            scanner.nextLine();
             System.out.print("Physic: ");
             if(!(line = scanner.nextLine()).isEmpty())
             {
@@ -59,7 +55,6 @@ public class Service {
             else{
                 nullCheck = true;
             }
-            scanner.nextLine();
             System.out.print("Chemistry: ");
             if(!(line = scanner.nextLine()).isEmpty())
             {
@@ -89,14 +84,12 @@ public class Service {
                     student.setName(line);
                     System.out.println();
                 }
-                scanner.nextLine();
                 System.out.print("Sex: ");
                 if(!(line = scanner.nextLine()).isEmpty())
                 {
                     student.setSex(line);
                     System.out.println();
                 }
-                scanner.nextLine();
                 System.out.print("Age: ");
                 if(!(line = scanner.nextLine()).isEmpty())
                 {
@@ -104,21 +97,18 @@ public class Service {
                     student.setAge(age);
                     System.out.println();
                 }
-                scanner.nextLine();
                 System.out.print("Math: ");
                 if(!(line = scanner.nextLine()).isEmpty())
                 {
                     student.setMathResult(Float.parseFloat(line));
                     System.out.println();
                 }
-                scanner.nextLine();
                 System.out.print("Physic: ");
                 if(!(line = scanner.nextLine()).isEmpty())
                 {
                     student.setPhysResult(Float.parseFloat(line));
                     System.out.println();
                 }
-                scanner.nextLine();
                 System.out.print("Chemistry: ");
                 if(!(line = scanner.nextLine()).isEmpty())
                 {
